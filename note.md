@@ -4,7 +4,7 @@ User:
 - *user_name : string
 - *first_name : string
 - *email : string
-- *password : string
+- *password_digest : string
 - hair_texture: string (select specific answer) 
 - hair_structure: string (select specific answer)
 - scalp_moist: string (select specific answer)
