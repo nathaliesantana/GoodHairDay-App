@@ -36,7 +36,6 @@ Review:
 
 -- belongs_to: user
 -- belongs_to: product
--- belongs_to: category, through: product
 
 Category: From (https://www.luxyhair.com/blogs/hair-blog/hair-products-101)
 - name: string (drop down menu select specific answer)

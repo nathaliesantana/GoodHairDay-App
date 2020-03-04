@@ -8,8 +8,8 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.boolean :sulfate
       t.integer :rating
       t.text :comment
-      t.belongs_to :user, foreign_key: true
-      t.belongs_to :product, foreign_key: true
+      t.references :user, foreign_key: true
+      t.references :product, foreign_key: true
 
       t.timestamps
     end
