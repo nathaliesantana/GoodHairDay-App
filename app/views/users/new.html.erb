@@ -1,0 +1,19 @@
+<h1>Signup</h1>
+
+<%= form_for(@user) do |f| %>
+
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <br>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    <br>
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+    <br>
+    <%= f.label :hair_texture %>
+    <%= f.select :hair_texture %>
+        <%= f.option value="volvo" %>
+        
+    <%=f.submit 'submit'%>
+<% end %>
