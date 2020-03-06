@@ -3,17 +3,36 @@
 <%= form_for(@user) do |f| %>
 
     <%= f.label :username %>
-    <%= f.text_field :username %>
+    <%= f.text_field :username %><br>
     <br>
     <%= f.label :email %>
-    <%= f.email_field :email %>
+    <%= f.email_field :email %><br>
     <br>
     <%= f.label :password %>
-    <%= f.text_field :password %>
+    <%= f.text_field :password %><br>
     <br>
     <%= f.label :hair_texture %>
-    <%= f.select :hair_texture %>
-        <%= f.option value="volvo" %>
-        
+    <select id="hair_texture">
+        <option value="fine">Fine</option>
+        <option value="medium">Medium</option>
+        <option value="thick">Thick</option>
+    </select><br>
+    <br>
+    <%= f.label :hair_texture %>
+    <select id="hair_texture">
+        <option value="straight">Straight</option>
+        <option value="wavy">Wavy</option>
+        <option value="Curly">Curly</option>
+        <option value="kinky">Kinky</option>
+    </select><br>
+    <br>
+    <%= f.label :scalp_moist %>
+    <select id="scalp_moist">
+        <option value="oily">Oily</option>
+        <option value="normal">Normal</option>
+        <option value="dry">Dry</option>
+    </select><br>
+
+    <br>
     <%=f.submit 'submit'%>
 <% end %>
