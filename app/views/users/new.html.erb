@@ -12,27 +12,13 @@
     <%= f.password_field :password %><br>
     <br>
     <%= f.label :hair_texture %>
-    <select id="hair_texture">
-        <option value="fine">Fine</option>
-        <option value="medium">Medium</option>
-        <option value="thick">Thick</option>
-    </select><br>
+    <%= f.select :hair_texture, ['Thin', 'Medium', 'Thick'] %><br>
     <br>
     <%= f.label :hair_structure %>
-    <select id="hair_structure">
-        <option value="straight">Straight</option>
-        <option value="wavy">Wavy</option>
-        <option value="Curly">Curly</option>
-        <option value="kinky">Kinky</option>
-    </select><br>
+    <%= f.select :hair_structure, ['Straight', 'Wavy', 'Curly', 'Kinky'] %><br>
     <br>
     <%= f.label :scalp_moist %>
-    <select id="scalp_moist">
-        <option value="oily">Oily</option>
-        <option value="normal">Normal</option>
-        <option value="dry">Dry</option>
-    </select><br>
-
+    <%= f.select :scalp_moist, ['Oily', 'Normal', 'Dry'] %>
     <br>
     <%=f.submit 'submit'%>
 <% end %>
