@@ -2,4 +2,6 @@
 <h4> <%= @user.hair_texture %> | <%= @user.hair_structure %> | <%= @user.scalp_moist %></h4><br>
 
 <h4>This are all of your products:</h4>
-
+<%@user.products.map do |f| %>
+<li><%= f.name%></li>
+<%end%>
