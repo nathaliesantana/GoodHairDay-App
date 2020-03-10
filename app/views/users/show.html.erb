@@ -1,5 +1,5 @@
-<h1> Hi User </h1>
-<%= @user.username %><br>
-<%= @user.hair_texture %>
-<%= @user.hair_structure %>
-<%= @user.scalp_moist %>
+<h1> Hi <%= @user.username.capitalize %> </h1><br>
+<h4> <%= @user.hair_texture %> | <%= @user.hair_structure %> | <%= @user.scalp_moist %></h4><br>
+
+<h4>This are all of your products:</h4>
+
