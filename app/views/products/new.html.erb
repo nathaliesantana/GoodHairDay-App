@@ -1,0 +1,15 @@
+<h1>Signup</h1>
+
+<%= form_for(@product) do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+    <br>
+    <%= f.label :brand %>
+    <%= f.text_field :brand %><br>
+    <br>
+    <%= f.label :category_id %>
+    <%= f.select :category_id, [Category.all.map {|c| c.id}] %>
+    <br>
+    <%=f.submit 'submit'%>
+<% end %>

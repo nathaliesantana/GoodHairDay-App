@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
 
+  get '/newproduct' => 'products#new'
+  post '/products' => 'products#create'
+
   resources :categories
   resources :reviews
   resources :users

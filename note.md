@@ -1,11 +1,14 @@
 GoodHairDay App
 
+** User need to be logged in in order to create a product.
+** A product needs to be created at the same time as the review, or else no product.
+
 User:
 - *user_name : string
 - *first_name : string
 - *email : string
 - *password_digest : string
-- hair_texture: string (select specific answer) 
+- hair_texture: string (select specific answer)
 - hair_structure: string (select specific answer)
 - scalp_moist: string (select specific answer)
 
