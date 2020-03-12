@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   post '/signup' => 'users#create'
 
   get '/newproduct' => 'products#new'
-  post '/products' => 'products#create'
+  post '/product' => 'products#create'
+
+  get '/newreview' => 'reviews#new'
+  post '/review' => 'reviews#create'
 
   resources :categories
   resources :reviews
