@@ -1,6 +1,13 @@
-<h1>This is my review page</h1>
+<h1><%= @review.user.username.capitalize %>'s <%=@review.product.name.capitalize%> product review </h1>
 <ul>
+    <strong>Product Name:  </strong><%= @review.product.name %><br>
+    <strong>Product Brand:  </strong><%= @review.product.brand %><br>
+    <strong>Product Type:  </strong><%= @review.product.category.name %><br>
+    <br>
     <strong>Animal tested:  </strong><%= @review.animal_tested %><br>
     <strong>Country of origin:  </strong><%= @review.country_of_origin %><br>
-    <strong>Comment:  </strong><%= @review.comment %><br>
+    <strong>Silicone Free:  </strong><%= @review.silicone %><br>
+    <strong>Sulfate Free:  </strong><%= @review.sulfate %><br>
+    <strong>Rating:  </strong><%= @review.rating %><br>
+    <strong>Comment:  </strong><br><%= @review.comment %><br>
  </ul>

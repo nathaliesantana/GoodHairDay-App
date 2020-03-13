@@ -2,8 +2,7 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-    # @product = Product.new
-    # @category = Category.new
+    @review.build_product
   end
 
   def show
@@ -27,9 +26,6 @@ class ReviewsController < ApplicationController
   private
   def review_params
     params.require(:review).permit(
-      :name,
-      :brand,
-      :category_id,
       :animal_tested,
       :country_of_origin,
       :paraben,
@@ -39,6 +35,7 @@ class ReviewsController < ApplicationController
       :comment,
       :user_id,
       :product_id,
+      product_attributes: [:name,:brand,:category_id]
     )
   end
 

@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   get '/newproduct' => 'products#new'
   post '/product' => 'products#create'
 
-  get '/newreview' => 'reviews#new'
-  post '/review' => 'reviews#create'
+
 
   resources :categories
   resources :reviews
