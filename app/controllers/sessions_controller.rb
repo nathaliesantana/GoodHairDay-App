@@ -1,4 +1,4 @@
-def SessionsController < ApplicationController
+class SessionsController < ApplicationController
 
   def home
   end

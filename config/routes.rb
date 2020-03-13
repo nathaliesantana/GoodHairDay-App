@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
 
@@ -8,6 +11,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :sessions
   resources :categories
   resources :reviews
   resources :users
