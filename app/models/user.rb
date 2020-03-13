@@ -1,7 +1,8 @@
 class User < ApplicationRecord
-    has_many :reviews
-    has_many :products, :through => :reviews
-    #has_many :categories, :through => :products
-    has_secure_password
+  has_secure_password
+  has_many :reviews
+  has_many :products, :through => :reviews
+  #has_many :categories, :through => :products
+  validates :username, uniqueness: true, presence: true
 
 end
