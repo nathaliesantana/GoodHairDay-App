@@ -5,3 +5,5 @@
 <%@user.products.map do |f| %>
 <li><%= f.name%></li>
 <%end%>
+
+<%= link_to "Log Out", logout_path, method: :delete %>
