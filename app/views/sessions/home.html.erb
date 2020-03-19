@@ -1,4 +1,9 @@
 <h3>It's always</h3>
 <h1>Good Hair Day</h1>
 <%= link_to "Log In", login_path%><br>
-<%= link_to "Signup", signup_path%>
+<%= link_to "Signup", signup_path%><br>
+
+<h3>What product are you looking for?</h3>
+
+<label>Type</label>
+<%= collection_select(:category, :name, Category.all, :name, :name) %></br><br>
