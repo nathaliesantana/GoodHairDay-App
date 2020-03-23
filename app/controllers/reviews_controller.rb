@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @categories = Category.all
     @review.build_product
   end
 
@@ -18,6 +19,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    # @review = @review.product.category_id.tap{|x| x[/\d+/]}
     # @product = Product.new
     # @category = Category.new
     if @review.save
@@ -26,6 +28,10 @@ class ReviewsController < ApplicationController
       render :new
     end
   end
+
+  # def all_reviews(product)
+  #   @productreviews = Review.all.select {|r| r.product_id == 1}
+  # end
 
   private
   def review_params
