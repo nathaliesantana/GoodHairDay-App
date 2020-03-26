@@ -1,3 +1,4 @@
+<%= flash[:message] if flash[:message] %>
 <h1>Create a new product</h1>
 
 <%= form_for(@product) do |f| %>
@@ -9,7 +10,7 @@
     <%= f.text_field :brand %><br>
     <br>
     <%= f.label :category_id %>
-    <%= f.select :category_id, [Category.all.map {|c| c.id}] %>
+    <%= f.collection_select(:category_id, Category.all, :id, :name) %><br>
     <br>
     <%=f.submit 'submit'%>
 <% end %>

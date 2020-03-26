@@ -10,7 +10,7 @@
     <%= o.text_field :brand %><br>
     <br>
     <%= o.label :category_id %>
-    <%= o.collection_select(:category_id , @categories, :id, :name) %><br>
+    <%= o.collection_select(:category_id, Category.all, :id, :name) %><br>
     <% end %>
   <br>
   <%= f.label :animal_tested %>
@@ -31,7 +31,7 @@
   <%= f.label :comment %>
   <%= f.text_area :comment %><br>
   <br>
-  <%= f.hidden_field :user_id, :value => @currentuser %>
+  <%= f.hidden_field :user_id, :value => @currentuser.id %>
 
   <%=f.submit 'submit'%>
 <% end %>
