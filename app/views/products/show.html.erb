@@ -1,4 +1,16 @@
-<%= flash[:message] if flash[:message] %>
-
 <h1><%= @product.name.capitalize %> </h1><br>
-<h4> <%= @product.brand %> | <%= @product.category.name %></h4><br>
+<% Review.all.map do |f| %>
+  <% if f.product.name.downcase == @product.name.downcase %>
+  <li>
+    <strong><%= f.user.username.capitalize%></strong><br>
+    <strong><%= @product.brand %> | <%= @product.category.name %></strong><br>
+    <strong>Animal tested:  </strong><%= f.animal_tested %><br>
+    <strong>Country of origin:  </strong><%= f.country_of_origin %><br>
+    <strong>Silicone Free:  </strong><%= f.silicone %><br>
+    <strong>Sulfate Free:  </strong><%= f.sulfate %><br>
+    <strong>Rating:  </strong><%= f.rating %><br>
+    <strong>Comment:  </strong><br><%= f.comment %><br>
+    <br>
+  </li>
+  <% end %>
+<% end %>
