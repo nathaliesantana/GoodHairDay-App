@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
   def index
-
+    @reviews = Review.all
   end
 
   def new
@@ -18,12 +18,15 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(review_params)
-    # @review = @review.product.category_id.tap{|x| x[/\d+/]}
-    # @product = Product.new
-    # @category = Category.new
-    if @review.save
-      redirect_to @review
+    @product = Product.new(review_params[:product_attributes])
+    @review = current_user.reviews.new(review_params)
+    if @product.save
+      @review.product_id = @product.id
+      if @review.save
+        redirect_to @review
+      else
+        render :new
+      end
     else
       render :new
     end
@@ -43,8 +46,6 @@ class ReviewsController < ApplicationController
       :sulfate,
       :rating,
       :comment,
-      :user_id,
-      :product_id,
       product_attributes: [:name,:brand,:category_id]
     )
   end

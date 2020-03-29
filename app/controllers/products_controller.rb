@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   def new
     @product = Product.new
+    @categories = Category.all
   end
 
   def show
@@ -13,6 +14,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to @product
     else
+      flash[:error]
       render :new
     end
   end
