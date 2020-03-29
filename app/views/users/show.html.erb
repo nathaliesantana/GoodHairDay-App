@@ -3,7 +3,7 @@
 
 <%= link_to "New Review", new_review_path %>
 
-<h4>This are all of your products:</h4>
+<h4>Here are all of your products:</h4>
 <%@user.products.map do |f| %>
-<li><%= f.name%></li>
+<li><%= link_to "#{f.name} - #{f.category.name}", f%></li>
 <%end%>
