@@ -1,7 +1,12 @@
 <h3>It's always</h3>
 <h1>Good Hair Day</h1>
-<%= link_to "Log In", login_path%><br>
-<%= link_to "Signup", signup_path%><br>
+
+<% if !logged_in? %>
+  <%= link_to "Log In", login_path%><br>
+  <%= link_to "Signup", signup_path%><br>
+<% else %>
+  <h3> Hi <%= link_to "#{current_user.username.capitalize}'s", user_path(current_user) %>!<h3>
+<% end %>
 
 <h3>What product are you looking for?</h3>
 
