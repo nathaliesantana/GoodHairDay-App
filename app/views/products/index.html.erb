@@ -1,0 +1,7 @@
+<h1>Products Reviews</h1>
+
+<% @single_products.map do |f| %>
+  <li>
+    <%= link_to f, (Product.find_by name: f) %>
+  </li>
+<% end %>

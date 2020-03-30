@@ -1,4 +1,10 @@
 class ProductsController < ApplicationController
+
+  def index
+    @products = Product.all
+    @single_products = @products.map { |f| f.name.downcase }.uniq
+  end
+
   def new
     @product = Product.new
     @categories = Category.all
