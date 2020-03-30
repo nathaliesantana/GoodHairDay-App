@@ -4,6 +4,8 @@
 <%= link_to "New Review", new_review_path %>
 
 <h4>Here are all of your products:</h4>
-<%@user.products.map do |f| %>
-<li><%= link_to "#{f.name} - #{f.category.name}", f%></li>
+<% Review.all.map do |f| %>
+  <% if f.user_id == @user.id %>
+    <li><%= link_to "#{f.product.name} - #{f.product.category.name}", f%></li>
+  <% end %>
 <%end%>
