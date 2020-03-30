@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
-    @single_products = @products.map { |f| f.name.downcase }.uniq
+    @single_products = @products.map { |f| f.name}.uniq
   end
 
   def new
@@ -16,8 +16,8 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
-    if @product.save
+    @product = Product.find_or_create_by(product_params)
+    if @product
       redirect_to @product
     else
       flash[:error]

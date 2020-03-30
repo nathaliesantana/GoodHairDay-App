@@ -14,9 +14,9 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @product = Product.new(review_params[:product_attributes])
+    @product = Product.find_or_create_by(review_params[:product_attributes])
     @review = current_user.reviews.new(review_params)
-    if @product.save
+    if @product
       @review.product_id = @product.id
       if @review.save
         redirect_to @review
