@@ -8,8 +8,8 @@
   <h3> Hi <%= link_to "#{current_user.username.capitalize}'s", user_path(current_user) %>!<h3>
 <% end %>
 
-<h5>What product are you looking for?</h5>
+<h5>What products are you looking for?</h5>
 <%= link_to "I wan to see it all", products_path%>
 <% Category.all.map do |f| %><br>
-  <%= link_to f.name, f %>
+  <%= link_to f.name.titleize, f %>
 <% end %>
