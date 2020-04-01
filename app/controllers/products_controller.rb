@@ -2,7 +2,6 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
-    @single_products = @products.map { |f| f.name}.uniq
   end
 
   def new

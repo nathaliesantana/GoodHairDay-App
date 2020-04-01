@@ -14,11 +14,12 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @product = Product.find_or_create_by(review_params[:product_attributes])
+    @product = Product.find_by_name(review_params[:product_attributes][:name].downcase)|| @product = Product.create(review_params[:product_attributes])
     @review = current_user.reviews.new(review_params)
     if @product
       @review.product_id = @product.id
       if @review.save
+        @product.reviews << @review
         redirect_to @review
       else
         render :new

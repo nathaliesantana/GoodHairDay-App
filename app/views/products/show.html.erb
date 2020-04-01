@@ -1,7 +1,6 @@
 <h1><%= @product.name.capitalize %> </h1><br>
 
-<% Review.all.map do |f| %>
-  <% if f.product.name.downcase == @product.name.downcase %>
+<% @product.reviews.map do |f| %>
   <li>
     <strong><%= f.user.username.capitalize%></strong><br>
     <strong><%= @product.brand %> | <%= @product.category.name %></strong><br>
@@ -13,5 +12,4 @@
     <strong>Comment:  </strong><br><%= f.comment %><br>
     <br>
   </li>
-  <% end %>
 <% end %>
