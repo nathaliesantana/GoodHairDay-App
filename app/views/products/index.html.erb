@@ -2,6 +2,6 @@
 
 <% @products.map do |f| %>
   <li>
-    <%= link_to f.name, f %>
+    <%= link_to "#{f.name} - #{f.category.name}", f %>
   </li>
 <% end %>

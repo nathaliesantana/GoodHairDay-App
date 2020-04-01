@@ -8,7 +8,8 @@
   <h3> Hi <%= link_to "#{current_user.username.capitalize}'s", user_path(current_user) %>!<h3>
 <% end %>
 
-<h3>What product are you looking for?</h3>
-
-<label>Type</label>
-<%= collection_select(:category, :name, Category.all, :name, :name) %></br><br>
+<h5>What product are you looking for?</h5>
+<%= link_to "I wan to see it all", products_path%>
+<% Category.all.map do |f| %><br>
+  <%= link_to f.name, f %>
+<% end %>
