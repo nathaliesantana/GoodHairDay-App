@@ -14,7 +14,8 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @product = Product.find_by_name(review_params[:product_attributes][:name].downcase)|| @product = Product.create(review_params[:product_attributes])
+    binding.pry
+    @product = Product.find_by(:name => review_params[:product_attributes][:name].downcase, :category_id => review_params[:product_attributes][:category_id])|| @product = Product.create(review_params[:product_attributes])
     @review = current_user.reviews.new(review_params)
     if @product
       @review.product_id = @product.id
