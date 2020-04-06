@@ -12,7 +12,7 @@
   <body>
       <div class="">
         <%= link_to "Home", root_path %>
-        <% if logged_in? %>
+        <% if !!current_user %>
         <%= link_to "#{current_user.username}'s profile", user_path(current_user), class: "" %>
         <%= link_to "Log Out", logout_path, class:"navbar-brand", method: :delete %>
         <% end %>

@@ -1,0 +1,5 @@
+<h1><%= @category.name %></h1>
+
+<% @category.products.map do |f| %>
+  <%= link_to f.name, f %><br>
+<% end %>

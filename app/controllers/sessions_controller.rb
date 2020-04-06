@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def home
+
   end
 
   def new
@@ -19,9 +20,13 @@ class SessionsController < ApplicationController
     end
   end
 
+
   def destroy
     log_out
     redirect_to root_path '/'
   end
+
+  private
+
 
 end
