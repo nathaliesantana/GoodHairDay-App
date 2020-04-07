@@ -1,0 +1,16 @@
+<%= form_for(@user) do |f| %>
+
+    <%= f.label :username %>
+    <%= f.text_field :username %><br>
+    <br>
+    <%= f.label :hair_texture %>
+    <%= f.select :hair_texture, ['Thin', 'Medium', 'Thick'] %><br>
+    <br>
+    <%= f.label :hair_structure %>
+    <%= f.select :hair_structure, ['Straight', 'Wavy', 'Curly', 'Kinky'] %><br>
+    <br>
+    <%= f.label :scalp_moist %>
+    <%= f.select :scalp_moist, ['Oily', 'Normal', 'Dry'] %>
+    <br>
+    <%=f.submit 'submit'%>
+<% end %>

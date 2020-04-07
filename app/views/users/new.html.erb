@@ -1,24 +1,11 @@
 <h1>Signup</h1>
 
 <%= form_for(@user) do |f| %>
-
-    <%= f.label :username %>
-    <%= f.text_field :username %><br>
-    <br>
     <%= f.label :email %>
     <%= f.email_field :email %><br>
     <br>
     <%= f.label :password %>
     <%= f.password_field :password %><br>
     <br>
-    <%= f.label :hair_texture %>
-    <%= f.select :hair_texture, ['Thin', 'Medium', 'Thick'] %><br>
-    <br>
-    <%= f.label :hair_structure %>
-    <%= f.select :hair_structure, ['Straight', 'Wavy', 'Curly', 'Kinky'] %><br>
-    <br>
-    <%= f.label :scalp_moist %>
-    <%= f.select :scalp_moist, ['Oily', 'Normal', 'Dry'] %>
-    <br>
-    <%=f.submit 'submit'%>
+    <%= render 'form'%>
 <% end %>

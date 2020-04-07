@@ -14,14 +14,14 @@ class UsersController < ApplicationController
     if auth_hash = auth
       auth_username = auth['info']['name']
       auth_email = auth['info']['email']
-      if user = User.find_by(:username => auth_username)
-        session[:user_id] = user.id
-        redirect_to user
+      if @user = User.find_by(:username => auth_username)
+        session[:user_id] = @user.id
+        redirect_to @user
       else
-        user = User.new(:email => auth_email, :username => auth_username, :password => SecureRandom.hex)
-        if user.save
-          session[:user_id] = user.id
-          redirect_to user
+        @user = User.new(:email => auth_email, :username => auth_username, :password => SecureRandom.hex)
+        if @user.save
+          session[:user_id] = @user.id
+          redirect_to @user
         else
           raise user.errors.full_messages.inspect
         end
