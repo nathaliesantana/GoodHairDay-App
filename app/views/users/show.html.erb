@@ -1,6 +1,8 @@
 <h1> Hi <%= @user.username.capitalize %> </h1><br>
-<h4> <%= @user.hair_texture %> | <%= @user.hair_structure %> | <%= @user.scalp_moist %></h4><br>
+<h4> <%= @user.hair_texture %> | <%= @user.hair_structure %> | <%= @user.scalp_moist %>
+<%= link_to "Edit profile", edit_user_path(current_user)%></h4>
 
+<br>
 <%= link_to "New Review", new_review_path %>
 
 <h4>Here are all of your products:</h4>
