@@ -1,6 +1,9 @@
 <h1> Hi <%= @user.username.capitalize %> </h1><br>
 <h4> <%= @user.hair_texture %> | <%= @user.hair_structure %> | <%= @user.scalp_moist %>
-<%= link_to "Edit profile", edit_user_path(current_user)%></h4>
+<% if session[:user_id] == @user.id %>
+<%= link_to "Edit profile", edit_user_path(current_user)%>
+<% end %>
+</h4>
 
 <br>
 <%= link_to "New Review", new_review_path %>
