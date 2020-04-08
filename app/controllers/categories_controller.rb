@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  
+
   def new
     @category = Category.new
     @categories = Category.all
@@ -16,6 +16,16 @@ class CategoriesController < ApplicationController
       redirect_to @category
     else
       render :new
+    end
+  end
+
+  def destroy
+    @category = Category.find_by_id(params[:id])
+    if session[:user_id] == @admin
+      @category.destroy
+      redirect_to '/'
+    else
+      redirect_to @category
     end
   end
 
