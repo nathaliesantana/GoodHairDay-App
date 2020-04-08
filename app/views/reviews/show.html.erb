@@ -12,5 +12,6 @@
     <strong>Rating:  </strong><%= @review.rating %><br>
     <strong>Comment:  </strong><br><%= @review.comment %><br>
  </ul>
-
+<% if session[:user_id] == @review.user_id %>
  <%= link_to "Edit review", edit_review_path(@review)%>
+<% end %>
