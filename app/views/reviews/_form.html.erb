@@ -1,0 +1,22 @@
+<%= form_for review do |f| %>
+
+  <%= f.label :animal_tested %>
+  <%= f.select :animal_tested , [["Yes", true], ["No", false]]%><br>
+  <br>
+  <%= f.label :country_of_origin %>
+  <%= f.country_select :country_of_origin, ['United States of America'], { include_blank: true }, { class: 'chosen-select' } %><br>
+  <br>
+  <%= f.label :silicone %>
+  <%= f.select :silicone , [["Yes", true], ["No", false]]%><br>
+  <br>
+  <%= f.label :sulfate %>
+  <%= f.select :sulfate , [["Yes", true], ["No", false]]%><br>
+  <br>
+  <%= f.label :rating %>
+  <%= f.number_field :rating, in: 1.0..5.0, step: 1 %><br>
+  <br>
+  <%= f.label :comment %>
+  <%= f.text_area :comment %><br>
+  <br>
+  <%=f.submit 'submit'%>
+<% end %>
