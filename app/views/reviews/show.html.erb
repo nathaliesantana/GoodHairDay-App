@@ -14,4 +14,5 @@
  </ul>
 <% if session[:user_id] == @review.user_id %>
  <%= link_to "Edit review", edit_review_path(@review)%>
+ <%= link_to "Delete", @review, method: :delete %>
 <% end %>

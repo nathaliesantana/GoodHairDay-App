@@ -48,6 +48,16 @@ class ReviewsController < ApplicationController
 
   end
 
+  def destroy
+    @review = Review.find_by_id(params[:id])
+    if session[:user_id] == @review.user_id
+      @review.destroy
+      redirect_to '/'
+    else
+      redirect_to @review
+    end
+  end
+
   private
   def review_params
     params.require(:review).permit(
