@@ -14,7 +14,6 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    binding.pry
     @product = Product.find_by(:name => review_params[:product_attributes][:name].downcase, :category_id => review_params[:product_attributes][:category_id])|| @product = Product.create(review_params[:product_attributes])
     @review = current_user.reviews.new(review_params)
     if @product
@@ -30,9 +29,20 @@ class ReviewsController < ApplicationController
     end
   end
 
-  # def all_reviews(product)
-  #   @productreviews = Review.all.select {|r| r.product_id == 1}
-  # end
+  def edit
+    @review = Review.find_by_id(params[:id])
+  end
+
+  def update
+    @review = Review.find_by_id(params[:id])
+
+    @review.update(review_params)
+    if @review.save
+      redirect_to @review
+    else
+      render :edit
+    end
+  end
 
   private
   def review_params
