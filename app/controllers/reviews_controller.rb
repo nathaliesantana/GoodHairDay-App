@@ -35,13 +35,17 @@ class ReviewsController < ApplicationController
 
   def update
     @review = Review.find_by_id(params[:id])
-
-    @review.update(review_params)
-    if @review.save
-      redirect_to @review
+    if session[:user_id] == @review.user_id
+      @review.update(review_params)
+      if @review.save
+        redirect_to @review
+      else
+        render :edit
+      end
     else
-      render :edit
+      redirect_to @review
     end
+
   end
 
   private
