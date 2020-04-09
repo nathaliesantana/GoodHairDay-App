@@ -1,16 +1,8 @@
-<h3>It's always</h3>
-<h1>Good Hair Day</h1>
-
-<% if current_user %>
-  <h3> Hi <%= link_to "#{current_user.username.capitalize}'s", user_path(current_user) %>!<h3>
-<% else %>
-  <%= link_to "Log In", login_path%><br>
-  <%= link_to "Signup", signup_path%><br>
-  <%= link_to "Log In With Facebook", '/auth/facebook' %><br>
-<% end %>
+<img src="logo.jpg">
 
 <h5>What products are you looking for?</h5>
-<%= link_to "I wan to see it all", products_path%>
+<br>
+<%= link_to "I wan to see it all", products_path, class:"buttons"%>
 <% Category.all.map do |f| %><br>
-  <%= link_to f.name.titleize, f %>
+  <%= link_to f.name.titleize, f, class:"buttons" %>
 <% end %>
