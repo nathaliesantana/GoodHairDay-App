@@ -10,7 +10,7 @@
   </head>
 
   <body>
-      <div class="">
+      <div class="media-block">
         <%= link_to "Home", root_path %>
         <% if !!current_user %>
           <%= link_to "#{current_user.username}'s profile", user_path(current_user), class: "" %>

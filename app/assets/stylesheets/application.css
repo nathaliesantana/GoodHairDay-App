@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+ .media-block {
+   display: inline-table;
+   background: #f0f0f0;
+   text-align: center;
+   border-radius: 18px;
+   padding: 20px;
+   width: 100%;
+   max-width: 30em;
+   min-width: 15em;
+ }
