@@ -13,8 +13,11 @@
       <div class="">
         <%= link_to "Home", root_path %>
         <% if !!current_user %>
-        <%= link_to "#{current_user.username}'s profile", user_path(current_user), class: "" %>
-        <%= link_to "Log Out", logout_path, class:"navbar-brand", method: :delete %>
+          <%= link_to "#{current_user.username}'s profile", user_path(current_user), class: "" %>
+          <%= link_to "Log Out", logout_path, class:"navbar-brand", method: :delete %>
+        <% end %>
+        <% if current_user == admin? %>
+          <%= link_to "Create Category", new_category_path %>
         <% end %>
         <%= yield %>
       </div>

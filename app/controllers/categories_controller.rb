@@ -1,8 +1,12 @@
 class CategoriesController < ApplicationController
 
   def new
-    @category = Category.new
-    @categories = Category.all
+    if current_user == admin?
+      @category = Category.new
+      @categories = Category.all
+    else
+      redirect_to '/'
+    end
   end
 
   def show
@@ -11,11 +15,15 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.new(category_params)
-    if @category.save
-      redirect_to @category
+    if current_user == admin?
+      @category = Category.new(category_params)
+      if @category.save
+        redirect_to @category
+      else
+        render :new
+      end
     else
-      render :new
+      redirect_to '/'
     end
   end
 
