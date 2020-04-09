@@ -1,7 +1,11 @@
 class CategoriesController < ApplicationController
 
   def index
-    @categories = Category.all
+    if current_user == admin?
+      @categories = Category.all
+    else
+      redirect_to '/'
+    end
   end
 
   def new
