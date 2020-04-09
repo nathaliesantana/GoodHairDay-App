@@ -1,9 +1,12 @@
 class CategoriesController < ApplicationController
 
+  def index
+    @categories = Category.all
+  end
+
   def new
     if current_user == admin?
       @category = Category.new
-      @categories = Category.all
     else
       redirect_to '/'
     end
@@ -28,12 +31,11 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @category = Category.find_by_id(params[:id])
-    if session[:user_id] == @admin
-      @category.destroy
-      redirect_to '/'
+    if current_user == admin?
+      Category.find_by_id(params[:id]).destroy
+      redirect_to '/categories'
     else
-      redirect_to @category
+      redirect_to '/'
     end
   end
 
