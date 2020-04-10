@@ -1,7 +1,10 @@
-<h1><%= @product.name.titleize %> </h1><br>
-
+<br>
+<img src='logo.jpg'>
+<br>
+<h4><%= @product.name.titleize %> </h4>
 <% @product.reviews.map do |f| %>
-  <li>
+  <ul>
+    -<br>
     <strong><%= f.user.username.capitalize%></strong><br>
     <strong><%= @product.brand %> | <%= @product.category.name %></strong><br>
     <strong>Animal tested:  </strong><%= f.animal_tested %><br>
@@ -11,5 +14,5 @@
     <strong>Rating:  </strong><%= f.rating %><br>
     <strong>Comment:  </strong><br><%= f.comment %><br>
     <br>
-  </li>
+  </ul>
 <% end %>

@@ -1,8 +1,14 @@
-<img src="logo.jpg">
-
-<h5>What products are you looking for?</h5>
 <br>
-<%= link_to "I wan to see it all", products_path, class:"buttons"%>
-<% Category.all.map do |f| %><br>
-  <%= link_to f.name.titleize, f, class:"buttons" %>
+<img src="logo.jpg">
+<% if !!current_user%>
+  <h5><%= link_to "Hey gorgeous #{current_user.username}", user_path(current_user)%></h5>
+<%end%>
+<br>
+<br>
+<h4>What products are you looking for?</h4>
+<br>
+<p><%= link_to "I wan to see it all", products_path, class:"buttons"%><p>
+
+<% Category.all.map do |f| %>
+  <p><%= link_to f.name.titleize, f, class:"buttons" %></p>
 <% end %>

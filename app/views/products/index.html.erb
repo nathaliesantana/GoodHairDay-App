@@ -1,7 +1,7 @@
 <h1>Products Reviews</h1>
 
 <% @products.map do |f| %>
-  <li>
-    <%= link_to "#{f.name.titleize} - #{f.category.name.titleize}", f %>
-  </li>
+  <ul>
+    ○<%= link_to "#{f.name.titleize} - #{f.category.name.titleize}", f %>
+  </ul>
 <% end %>

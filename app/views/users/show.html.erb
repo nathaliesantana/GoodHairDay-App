@@ -1,16 +1,19 @@
-<h1> Hi <%= @user.username.capitalize %> </h1><br>
-<h4> <%= @user.hair_texture %> | <%= @user.hair_structure %> | <%= @user.scalp_moist %>
+<br>
+<img src='logo.jpg'>
+<br>
+<h5><%= @user.username.capitalize %></h5><br>
+<p><%= @user.hair_texture %> | <%= @user.hair_structure %> | <%= @user.scalp_moist %><br>
 <% if session[:user_id] == @user.id %>
 <%= link_to "Edit profile", edit_user_path(current_user)%>
 <% end %>
-</h4>
+</p>
 
 <br>
-<%= link_to "New Review", new_review_path %>
-
-<h4>Here are all of your products:</h4>
+<%= link_to "New Review", new_review_path, class:"buttons" %>
+<br>
+<h4>My Product Reviews:</h4>
 <% Review.all.map do |f| %>
   <% if f.user_id == @user.id %>
-    <li><%= link_to "#{f.product.name} - #{f.product.category.name}", f%></li>
+    <ul>○<%= link_to "#{f.product.name} - #{f.product.category.name}", f%></ul>
   <% end %>
 <%end%>
