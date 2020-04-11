@@ -1,8 +1,10 @@
 <h3>All Categories</h3>
-
+<br>
+<%= link_to "New Category", new_category_path, class:"buttons" %>
+<br>
 <% @categories.map do |f| %>
-  <li>
+  <ul>○
     <%= link_to "#{f.name.titleize}", f %> -
     <%= link_to "Delete", f, method: :delete %>
-  </li>
+   </ul>
 <% end %>

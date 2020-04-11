@@ -1,4 +1,6 @@
 <h3>Edit Review</h3
 <%= form_for @review do %>
-  <%= render partial: "form", locals: {review: @review}%>
+<ul>
+    <%= render partial: "form", locals: {review: @review}%>
+</ul>
 <% end %>

@@ -1,5 +1,7 @@
 <br>
-<img src='logo.jpg'>
+<br>
+<%= image_tag("Logo_inline.png", :alt => "Good Hair Day Logo", class:"logo_inline")%>
+<br>
 <br>
 <h4><%= @product.name.titleize %> </h4>
 <% @product.reviews.map do |f| %>
