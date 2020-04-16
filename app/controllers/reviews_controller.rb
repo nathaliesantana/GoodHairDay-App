@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     @categories = Category.all
+    @product = Product.new
     @review.build_product
   end
 
