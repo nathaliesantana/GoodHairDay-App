@@ -4,10 +4,10 @@
 
   <%= f.fields_for :product do |o| %>
     <%= o.label :product_name %>
-    <%= o.text_field :name %><br>
+    <%= o.text_field :name, placeholder: (@product.errors.full_messages_for(:name).first) %><br>
     <br>
     <%= o.label :brand %>
-    <%= o.text_field :brand %><br>
+    <%= o.text_field :brand, placeholder: (@product.errors.full_messages_for(:brand).first) %><br>
     <br>
     <%= o.label :category_id %>
     <%= o.collection_select(:category_id, Category.all, :id, :name) %><br>
