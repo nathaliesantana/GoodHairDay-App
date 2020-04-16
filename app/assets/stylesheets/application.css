@@ -54,6 +54,10 @@ ul{
   text-align: left;
 }
 
+.number_field{
+  width: 40%;
+ }
+
  .media-block {
    min-height: 30em;
    background: #f0f0f0;
