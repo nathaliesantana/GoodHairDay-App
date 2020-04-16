@@ -3,13 +3,13 @@
 <%= form_for @user do |f| %>
   <ul>
   <%= f.label :username %>
-  <%= f.text_field :username %><br>
+  <%= f.text_field :username, placeholder: (@user.errors.full_messages_for(:username).first) %><br>
   <br>
   <%= f.label :email %>
-  <%= f.email_field :email %><br>
+  <%= f.email_field :email, placeholder: (@user.errors.full_messages_for(:email).first) %><br>
   <br>
   <%= f.label :password %>
-  <%= f.password_field :password %><br>
+  <%= f.password_field :password, placeholder: (@user.errors.full_messages_for(:password).first) %><br>
   <br>
   <%= render partial: "form", locals: {user: @user}%>
   </ul>
