@@ -70,6 +70,18 @@ ul{
    margin: auto;
  }
 
+ .alerts {
+  display: block;
+  border-style: solid;
+  border-color: red;
+  border-width: thin;
+  color: red;
+  border-radius: 18px;
+  padding: 5px;
+  width: 80%;
+  margin: auto;
+}
+
  .buttons{
    display: block;
    background: #cc99ff;
