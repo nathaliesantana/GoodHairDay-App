@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if auth_hash = auth
       auth_username = auth['info']['name']
       auth_email = auth['info']['email']
-      if @user = User.find_by(:username => auth_username)
+      if @user = User.find_by(:email => auth_email)
         session[:user_id] = @user.id
         redirect_to @user
       else
