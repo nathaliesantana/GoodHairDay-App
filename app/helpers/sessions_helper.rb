@@ -16,16 +16,19 @@ module SessionsHelper
     !!session[:user_id]
   end
 
+  def require_admin
+    unless current_user == admin?
+      flash[:error] = "You need to be admin to access this section"
+      redirect_to '/'
+    end
+  end
+
   def require_login
     unless logged_in?
       flash[:error] = "You must be logged in to access this section"
       redirect_to '/login'
     end
   end
-
-  # def redirect_if_not_logged_in
-  #   redirect_to '/' if !logged_in?
-  # end
 
   def log_out
     session.delete(:user_id)

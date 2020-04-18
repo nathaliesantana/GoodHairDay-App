@@ -1,19 +1,12 @@
 class CategoriesController < ApplicationController
+  before_action :require_admin, except: :show
 
   def index
-    if current_user == admin?
-      @categories = Category.all
-    else
-      redirect_to '/'
-    end
+    @categories = Category.all
   end
 
   def new
-    if current_user == admin?
       @category = Category.new
-    else
-      redirect_to '/'
-    end
   end
 
   def show
@@ -22,25 +15,18 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    if current_user == admin?
-      @category = Category.new(category_params)
-      if @category.save
-        redirect_to @category
-      else
-        render :new
-      end
+    @category = Category.new(category_params)
+    if @category.save
+      redirect_to @category
     else
-      redirect_to '/'
+      render :new
     end
   end
 
   def destroy
-    if current_user == admin?
-      Category.find_by_id(params[:id]).destroy
-      redirect_to '/categories'
-    else
-      redirect_to '/'
-    end
+    Category.find_by_id(params[:id]).destroy
+    redirect_to '/categories'
+
   end
 
   private
