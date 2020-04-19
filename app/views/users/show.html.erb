@@ -5,11 +5,11 @@
 <p><%= @user.hair_texture %> | <%= @user.hair_structure %> | <%= @user.scalp_moist %><br>
 <% if session[:user_id] == @user.id %>
 <%= link_to "Edit profile", edit_user_path(current_user)%>
-<% end %>
 </p>
 
 <br>
 <%= link_to "New Review", new_review_path, class:"buttons" %>
+<% end %>
 <br>
 <h4>My Product Reviews:</h4>
 <% Review.all.map do |f| %>
