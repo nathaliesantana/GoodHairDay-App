@@ -9,6 +9,6 @@
 <br>
 <p><%= link_to "I wan to see it all", products_path, class:"buttons"%><p>
 
-<% Category.all.map do |f| %>
+<% Category.all.order(:name).map do |f| %>
   <p><%= link_to f.name.titleize, f, class:"buttons" %></p>
 <% end %>
