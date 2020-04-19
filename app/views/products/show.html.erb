@@ -6,9 +6,8 @@
 <h4><%= @product.name.titleize %> </h4>
 <% @product.reviews.map do |f| %>
   <ul>
-    -<br>
-    <strong><%= f.user.username.capitalize%></strong><br>
-    <strong><%= @product.brand %> | <%= @product.category.name %></strong><br>
+    <strong>○<%=link_to "#{f.user.username.capitalize}'s review", f.user %></strong><br>
+    <strong><%= @product.brand.capitalize %> | <%= @product.category.name %></strong><br>
     <strong>Animal tested:  </strong><%= f.animal_tested %><br>
     <strong>Country of origin:  </strong><%= f.country_of_origin %><br>
     <strong>Silicone Free:  </strong><%= f.silicone %><br>
