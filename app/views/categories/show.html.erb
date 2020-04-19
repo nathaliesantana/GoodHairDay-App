@@ -1,5 +1,7 @@
 <h1><%= @category.name %></h1>
 
-<% @category.products.map do |f| %>
-  <%= link_to f.name, f %><br>
+<% @category.products.order(:name).map do |f| %>
+  <ul>
+  ○<%= link_to f.name.capitalize, f %><br>
+  </ul>
 <% end %>
