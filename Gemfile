@@ -68,3 +68,7 @@ gem 'dotenv-rails'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "actionview", ">= 5.2.4.3"
+gem "execjs"
+gem 'therubyracer'
